@@ -1,0 +1,21 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: <ingress-name> #FIXME
+  namespace: <namespace> #FIXME
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: <fqdn> #FIXME e.g. example.mtze.me
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: <serivce-name> #FIXME
+            port:
+              number: <service-port> #FIXME
+

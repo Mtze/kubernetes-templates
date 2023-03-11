@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: <deployment-name> #FIXME
+  namespace: <namespace> #FIXME
+  labels:
+    app: <deplyoment-label> #FIXME 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: <deplyoment-label-selector> #FIXME
+  template:
+    metadata:
+      labels:
+        app: <deployment-pod-labels> #FIXME
+    spec:
+      containers:
+      - name: <container-name> #FIXME
+        image: <container-image> #FIXME
+        ports:
+          - containerPort: <container-port> #FIXME
+            name: <container-port-name> #FIXME
+        env: 
+          - name: <env-key> #FIXME
+            value: <env-value> #FIXME
